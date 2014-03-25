@@ -1,0 +1,3 @@
+pc1 pc2 : switch
+switch : router1
+server : router2

@@ -1,0 +1,6 @@
+ifconfig eth0 10.20.75.2 netmask 255.255.255.0 up
+ifconfig eth1 192.168.0.1 netmask 255.255.255.0 up
+ifconfig eth2 192.168.1.1 netmask 255.255.255.0 up
+ifconfig eth3 192.168.2.1 netmask 255.255.255.0 up
+
+/etc/init.d/dhcp3-server start
