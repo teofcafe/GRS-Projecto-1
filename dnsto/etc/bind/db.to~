@@ -7,7 +7,7 @@ $TTL   60000
                         0 ; negative cache ttl
                         )
 @                   IN      NS      dnsto.to.
-dnsto               IN      A       30.40.0.2
+dnsto              IN      A       30.40.1.1
 
-teo      	IN      NS      dnsteo.teo.to.
-dnsteo.teo 	IN   	A       10.20.74.3
+teo            IN      NS      dnsteo.teo.to.
+dnsteo.teo     IN      A       10.20.74.3

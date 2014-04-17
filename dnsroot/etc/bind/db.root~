@@ -8,7 +8,10 @@ $TTL   60000
                         )
 
 @               IN      NS      ROOT-SERVER.
-ROOT-SERVER.	IN	A	30.40.0.1
+ROOT-SERVER.	IN	A	192.168.0.5
 
-to.		IN 	NS	dnsto.to.
-dnsto.to.	IN 	A	30.40.0.2
+org.		IN 	NS	dnsorg.org.
+dnsorg.org.	IN 	A	192.168.0.1
+
+net.		IN	NS	dnsnet.net.
+dnsnet.net.	IN	A	192.168.0.2

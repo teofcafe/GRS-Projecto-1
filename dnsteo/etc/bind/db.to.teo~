@@ -1,11 +1,11 @@
 $TTL    60000
-@               IN      SOA     dnsteo.teo.to.    root.dnsteo.teo.to. (
+@               IN      SOA     dnslug.lugroma3.org.    root.dnslug.lugroma3.org. (
                         2006031201 ; serial
                         28 ; refresh
-                        14400 ; retry
+                        14 ; retry
                         3600000 ; expire
-                        15 ; negative cache ttl
+                        0 ; negative cache ttl
                         )
-@               IN      NS      dnsteo.teo.to.
-dnsteo          IN      A       10.20.74.3
-dnsteoreplica	IN	A	10.20.74.4
+@               IN      NS      dnslug.lugroma3.org.
+dnslug          IN      A       192.168.0.11
+pc1		IN	A	192.168.0.111
