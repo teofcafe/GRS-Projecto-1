@@ -2,9 +2,10 @@ $TTL    60000
 @               IN      SOA     dnsteo.teo.to.    root.dnsteo.teo.to. (
                         2006031201 ; serial
                         28 ; refresh
-                        14 ; retry
+                        14400 ; retry
                         3600000 ; expire
-                        0 ; negative cache ttl
+                        15 ; negative cache ttl
                         )
 @               IN      NS      dnsteo.teo.to.
 dnsteo          IN      A       10.20.74.3
+dnsteoreplica	IN	A	10.20.74.4

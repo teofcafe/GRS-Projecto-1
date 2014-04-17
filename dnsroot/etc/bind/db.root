@@ -11,4 +11,4 @@ $TTL   60000
 ROOT-SERVER.	IN	A	30.40.0.1
 
 to.		IN 	NS	dnsto.to.
-dnsto.to.	IN 	A	30.40.0.2
+dnsto.to.	IN 	A	30.40.1.1

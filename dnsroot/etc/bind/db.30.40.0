@@ -10,7 +10,8 @@ $TTL    1
 @                            	IN      NS      1.0.40.30.in-addr.arpa.
 1.0.40.30.in-addr.arpa.    	IN      A       30.40.0.1
 1          		PTR        .
-2          		PTR        dnsto.to.
+1.1.40.30.in-addr-arpa.		IN	A	30.40.1.1
+1			PTR	   dnsto.to.
 3.74.20.10.in-addr-arpa.	IN	A	10.20.74.3
-3		       	PTR        dnsteo.teo.org.
+3		       	PTR        dnsteo.teo.to.
 

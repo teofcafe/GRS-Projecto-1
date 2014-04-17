@@ -1,0 +1,7 @@
+/sbin/ifconfig eth0 10.20.74.3 netmask 255.255.255.0 up up
+route add default gw 10.20.74.1 dev eth0
+chmod a+w /var/spool/mail
+chmod go-rw /etc/exim4/exim4.conf
+/etc/init.d/bind start
+/etc/init.d/exim4 start
+/etc/init.d/inetd start
