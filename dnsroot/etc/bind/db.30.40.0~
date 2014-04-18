@@ -1,19 +1,17 @@
 ; reverse lookup database 
 $TTL    1
-@               IN      SOA     5.0.168.192.in-addr.arpa.    nobody.nowhere. (
+@               IN      SOA     1.0.40.30.in-addr.arpa.    nobody.nowhere. (
                         2006031201 ; serial
                         28 ; refresh
                         14 ; retry
                         3600000 ; expire
                         0 ; negative cache ttl 
                         )
-@                            IN      NS      5.0.168.192.in-addr.arpa.
-5.0.168.192.in-addr.arpa.    IN      A       192.168.0.5
-5          PTR        .
-1          PTR        dnsorg.org.
-2          PTR        dnsnet.net.
-11         PTR        dnslug.lugroma3.org.
-22         PTR        dnsnano.nanoinside.net.
-111        PTR        pc1.lugroma3.org.
-222        PTR        pc2.nanoinside.net.
+@                            IN      NS      1.0.40.30.in-addr.arpa.
+1.0.40.30.in-addr.arpa.    IN      A       30.40.0.1
+1          PTR        .
+1.1.40.30.in-addr.arpa.    IN      A       30.40.1.1
+1          PTR        dnsto.to.
+3.74.20.10.in-addr.arpa.   IN      A       10.20.74.3
+3          PTR        dnsteo.teo.to
 
