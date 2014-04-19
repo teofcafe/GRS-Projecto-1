@@ -1,4 +1,2 @@
 pc1 pc2 pc3 STB: routerdomestico
-dnsteoreplica : dnsteo
-dnsteo : dnsto
-dnsto: dnsroot
+middleware_gestor : routertt routerfcct routerdomestico

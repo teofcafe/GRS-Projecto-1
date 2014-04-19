@@ -5,6 +5,9 @@ chmod go-rw /etc/exim4/exim4.conf
 /etc/init.d/bind start
 /etc/init.d/exim4 start
 /etc/init.d/inetd start
-useradd --create-home --password membro1pwd membro1
-useradd --create-home --password membro2pwd membro2
-useradd --create-home --password membro3pwd membro3
+useradd --create-home membro1
+echo -e "membro1\nmembro1" | passwd membro1
+useradd --create-home membro2
+echo -e "membro2\nmembro2" | passwd membro2
+useradd --create-home membro3
+echo -e "membro3\nmembro3" | passwd membro3

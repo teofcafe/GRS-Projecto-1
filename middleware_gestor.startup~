@@ -12,8 +12,6 @@ cfgmaker --global 'WorkDir:/var/www' --output /root/mrtg.cfg private@10.20.75.2
 
 cfgmaker --global 'WorkDir:/var/www' --output /root/mrtg.cfg private@10.20.73.2
 
-cfgmaker --global 'WorkDir:/var/www' --output /root/mrtg.cfg private@10.20.74.2
-
 env LANG=C /usr/bin/mrtg /root/mrtg.cfg --daemon
 
 /etc/init.d/apache2 start

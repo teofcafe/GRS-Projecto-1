@@ -20,7 +20,7 @@
 ########################### Essential Parameters ###########################
 
 # Over-rides your full name from Unix password file. Required for PC-Pine.
-personal-name=membro2 user on pc2
+personal-name=membro3 user on pc2
 
 # Sets domain part of From: and local addresses in outgoing mail.
 user-domain=teo.to
@@ -33,13 +33,13 @@ nntp-server=
 
 # Path of (local or remote) INBOX, e.g. ={mail.somewhere.edu}inbox
 # Normal Unix default is the local INBOX (usually /usr/spool/mail/$USER).
-inbox-path={imap.teo.to/user=membro2}inbox
+inbox-path={imap.teo.to/user=membro3}inbox
 
 ###################### Collections, Folders, and Files #####################
 
 # List of incoming msg folders besides INBOX, e.g. ={host2}inbox, {host3}inbox
 # Syntax: optnl-label {optnl-imap-host-name}folder-path
-incoming-folders={imap.teo.to/user=membro2}inbox
+incoming-folders={imap.teo.to/user=membro3}inbox
 
 # List of directories where saved-message folders may be. First one is
 # the default for Saves. Example: Main {host1}mail/[], Desktop mail\[]
@@ -115,7 +115,7 @@ initial-keystroke-list=
 default-composer-hdrs=
 
 # Add these customized headers (and possible default values) when composing
-customized-hdrs=membro2@teo.to
+customized-hdrs=membro3@teo.to
 
 # Determines default folder name for Saves...
 # Choices: default-folder, by-sender, by-from, by-recipient, last-folder-used.

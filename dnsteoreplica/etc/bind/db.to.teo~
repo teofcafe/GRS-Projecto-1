@@ -6,5 +6,5 @@ $TTL    60000
                         3600000 ; expire
                         15 ; negative cache ttl
                         )
-@               IN      NS      dnsteoreplica.teo.to.
+@               IN      NS      dnsteo.teo.to.
 dnsteo 		IN      A       10.20.74.4

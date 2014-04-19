@@ -4,7 +4,7 @@ $TTL    60000
                         28 ; refresh
                         14 ; retry
                         3600000 ; expire
-                        60000 ; negative cache ttl
+                        15 ; negative cache ttl
                         )
 @               IN      NS      dnsteo.teo.to.
 @		IN	MX 5	mail.teo.to.

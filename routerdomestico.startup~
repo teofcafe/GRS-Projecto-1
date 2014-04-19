@@ -2,14 +2,19 @@ ifconfig eth0 10.20.75.2 netmask 255.255.255.0 up
 ifconfig eth1 192.168.0.1 netmask 255.255.255.0 up
 ifconfig eth2 192.168.1.1 netmask 255.255.255.0 up
 ifconfig eth3 192.168.2.1 netmask 255.255.255.0 up
+
 route add default gw 10.20.75.1 dev eth0
+
 /etc/init.d/dhcp3-server start
 
 /sbin/iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE 
+
 /sbin/iptables -A FORWARD -i eth0 -o eth1 -m state --state RELATED,ESTABLISHED -j ACCEPT 
 /sbin/iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT
+
 /sbin/iptables -A FORWARD -i eth0 -o eth2 -m state --state RELATED,ESTABLISHED -j ACCEPT 
 /sbin/iptables -A FORWARD -i eth2 -o eth0 -j ACCEPT
+
 /sbin/iptables -A FORWARD -i eth0 -o eth3 -m state --state RELATED,ESTABLISHED -j ACCEPT 
 /sbin/iptables -A FORWARD -i eth3 -o eth0 -j ACCEPT
 
