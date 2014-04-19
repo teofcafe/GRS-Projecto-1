@@ -1,0 +1,58 @@
+# Updated by Pine(tm) 4.05, copyright 1989-1998 University of Washington.
+#
+# Pine configuration file -- customize as needed.
+#
+# This file sets the configuration options used by Pine and PC-Pine.  If you
+# are using Pine on a Unix system, there may be a system-wide configuration
+# file which sets the defaults for these variables.  There are comments in
+# this file to explain each variable, but if you have questions about
+# specific settings see the section on configuration options in the Pine
+# notes.  On Unix, run pine -conf to see how system defaults have been set.
+# For variables that accept multiple values, list elements are separated
+# by commas.  A line beginning with a space or tab is considered to be a
+# continuation of the previous line.  For a variable to be unset its value
+# must be blank.  To set a variable to the empty string its value should
+# be "".  You can override system defaults by setting a variable to the
+# empty string.  Switch variables are set to either "yes" or "no", and
+# default to "no".
+# Lines beginning with "#" are comments, and ignored by Pine.
+
+########################### Essential Parameters ###########################
+
+# Over-rides your full name from Unix password file. Required for PC-Pine.
+personal-name= membro2 user on pc2
+
+# Sets domain part of From: and local addresses in outgoing mail.
+user-domain=teo.to
+
+# List of SMTP servers for sending mail. If blank: Unix Pine uses sendmail.
+smtp-server=mail.teo.to
+
+# Path of (local or remote) INBOX, e.g. ={mail.somewhere.edu}inbox
+# Normal Unix default is the local INBOX (usually /usr/spool/mail/$USER).
+inbox-path={imap.teo.to/user=membro2}inbox
+
+###################### Collections, Folders, and Files #####################
+
+# List of incoming msg folders besides INBOX, e.g. ={host2}inbox, {host3}inbox
+# Syntax: optnl-label {optnl-imap-host-name}folder-path
+incoming-folders={imap.teo.to}inbox
+
+# List of directories where saved-message folders may be. First one is
+# the default for Saves. Example: Main {host1}mail/[], Desktop mail\[]
+# Syntax: optnl-label {optnl-imap-hostname}optnl-directory-path[]
+folder-collections="Mail on teo" {imap.teo.to}[]
+
+# Over-rides default path for sent-mail folder, e.g. =old-mail (using first
+# folder collection dir) or ={host2}sent-mail or ="" (to suppress saving).
+# Default: sent-mail (Unix) or SENTMAIL.MTX (PC) in default folder collection.
+default-fcc={imap.teo.to}sentmail
+
+############################### Preferences ################################
+
+# List of features; see Pine's Setup/options menu for the current set.
+# e.g. feature-list= select-without-confirm, signature-at-bottom
+# Default condition for all of the features is no-.
+
+# Add these customized headers (and possible default values) when composing
+customized-hdrs=membro2@teo.to
