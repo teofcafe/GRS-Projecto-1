@@ -11,6 +11,6 @@ $TTL    60000
 
 dnsteo 		IN      A       10.20.74.4
 
+mail		IN	A	10.20.74.2
 imap		IN	A	10.20.74.2
 pop		IN	A	10.20.74.2
-mail		IN	A	10.20.74.2

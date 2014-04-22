@@ -1,3 +1,18 @@
 /sbin/ifconfig eth0 10.20.74.2 netmask 255.255.255.0 up
 route add default gw 10.20.74.1 dev eth0
+
+chmod a+w /var/spool/mail
+chmod go-rw /etc/exim4/exim4.conf
+
+/etc/init.d/bind start
+/etc/init.d/exim4 start
+/etc/init.d/inetd start
+
+useradd --create-home membro1
+echo -e "membro1\nmembro1" | passwd membro1
+useradd --create-home membro2
+echo -e "membro2\nmembro2" | passwd membro2
+useradd --create-home membro3
+echo -e "membro3\nmembro3" | passwd membro3
+
 snmpd
