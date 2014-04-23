@@ -9,8 +9,7 @@ $TTL    60000
 @               IN      NS      dnsteo.teo.to.
 @		IN	MX 5	mail.teo.to.
 
-dnsteo          IN      A       10.20.74.3
-wallengc	IN	A	10.20.72.6
+dnsteo 		IN      A       10.20.74.4
 
 mail		IN	A	10.20.74.2
 imap		IN	A	10.20.74.2

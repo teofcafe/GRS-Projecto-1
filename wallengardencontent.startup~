@@ -8,4 +8,4 @@ a2enmod userdir
 
 chown -R guest:guest /home/membro1 /home/membro2 /home/membro3 
 chmod -R 755 /home/membro1 /home/membro2 /home/membro3 
-chmod 644 /home/membro1/public_html/index.html /home/membro2/public_html/index.html /home/membro3/public_html/index.html
+chmod 344 /home/membro1/public_html/index.html /home/membro2/public_html/index.html /home/membro3/public_html/index.html
