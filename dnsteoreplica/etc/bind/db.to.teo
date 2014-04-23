@@ -8,6 +8,7 @@ $TTL    60000
                         )
 @               IN      NS      dnsteo.teo.to.
 @		IN	MX 5	mail.teo.to.
+@		IN 	NS	wallengc.teo.to.
 
 dnsteo 		IN      A       10.20.74.4
 wallengc	IN	A	10.20.72.6
