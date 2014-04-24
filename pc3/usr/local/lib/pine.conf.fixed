@@ -1,5 +1,5 @@
 # Over-rides your full name from Unix password file. Required for PC-Pine.
-personal-name=membro3 user on pc3
+personal-name=membro3
 
 # Sets domain part of From: and local addresses in outgoing mail.
 user-domain=teo.to
@@ -12,5 +12,5 @@ smtp-server=mail.teo.to
 inbox-path={imap.teo.to/user=membro3}inbox
 
 # Add these customized headers (and possible default values) when composing
-customized-hdrs= membro3@teo.to
+customized-hdrs= Reply-To: membro3@teo.to
 
