@@ -6,20 +6,16 @@ route add default gw 10.20.75.1 dev eth0
 /etc/init.d/dhcp3-server start
 
 /sbin/iptables -F
-/sbin/iptables -P INPUT DROP
-/sbin/iptables -P OUTPUT DROP
-
-/sbin/iptables -A INPUT -s 10.20.72.0/24 -d 192.168.0.5 -m state --state NEW,ESTABLISHED, RELATED -j ACCEPT
-/sbin/iptables -A OUTPUT -s 192.168.0.5 -d 10.20.72.0/24 -m state --state ESTABLISHED -j ACCEPT
-
 /sbin/iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE 
-
-/sbin/iptables -A FORWARD -i eth0 -o eth1 -m state --state RELATED,ESTABLISHED -j ACCEPT 
-/sbin/iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT
-
-/sbin/iptables -A INPUT -j DROP
-/sbin/iptables -A OUTPUT -j DROP
+/sbin/iptables -A FORWARD -i eth0 -o eth1 -m state --state RELATED,ESTABLISHED -j ACCEPT
+/sbin/iptables -A FORWARD -i eth1 -o eth0 -s 192.168.0.5 -d 10.20.72.6 ! -p tcp -j REJECT
+/sbin/iptables -A FORWARD -i eth1 -o eth0 -s 192.168.0.5 -d 10.20.72.3 -p tcp --sport 22 -j ACCEPT
+/sbin/iptables -A FORWARD -i eth1 -o eth0 -s 192.168.0.5 -d 10.20.72.3 -p udp -j ACCEPT
+/sbin/iptables -A FORWARD -i eth1 -o eth0 -s 192.168.0.5 -d 10.20.72.3 -p icmp -j ACCEPT
+/sbin/iptables -A FORWARD -i eth1 -o eth0 -s 192.168.0.5 -d 10.20.72.3 -j REJECT
+/sbin/iptables -A FORWARD -i eth1 -o eth0 -s 192.168.0.5 -d 10.20.72.0/24 -j ACCEPT
+/sbin/iptables -A FORWARD -i eth1 -o eth0 ! -s 192.168.0.5 -j ACCEPT
+/sbin/iptables -A FORWARD -i eth1 -o eth0 -j REJECT
 
 snmpd
-
 
