@@ -1,2 +1,3 @@
-pc1 pc2 pc3 stb: routerdomestico
+switchdomestico : routerdomestico
+pc1 pc2 pc3 stb : switchdomestico
 middleware_gestor : routertt routerfcct routerdomestico servidoremail
