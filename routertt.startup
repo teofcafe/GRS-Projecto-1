@@ -6,14 +6,41 @@ route add default gw 10.20.75.2 dev eth3
 
 /etc/init.d/zebra start
 
-/sbin/iptables -F
-/sbin/iptables -A FORWARD -i eth1 -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -F
+
+iptables -A FORWARD -i eth1 -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+#Servidor DNS [primario]
+# > 512 bytes
+iptables -A FORWARD -o eth2 -d 10.20.74.3 -p tcp --dport 53 -j ACCEPT
+# <= 512 bytes
+iptables -A FORWARD -o eth2 -d 10.20.74.3 -p udp --dport 53 -j ACCEPT
+
+#Servidor DNS [secundario]
+# > 512 bytes
+iptables -A FORWARD -o eth2 -d 10.20.74.4 -p tcp --dport 53 -j ACCEPT
+# <= 512 bytes
+iptables -A FORWARD -o eth2 -d 10.20.74.4 -p udp --dport 53 -j ACCEPT
+
+#Servidor de e-mail
+#pop3
+iptables -A FORWARD -o eth2 -d 10.20.74.2 -p tcp --dport 110 -j ACCEPT
+#imap
+iptables -A FORWARD -o eth2 -d 10.20.74.2 -p tcp --dport 143 -j ACCEPT
+#exim
+iptables -A FORWARD -o eth2 -d 10.20.74.2 -p tcp --dport 25 -j ACCEPT
+
+#permitir acesso de fora apenas para a DMZ
 /sbin/iptables -A FORWARD -i eth2 -o eth1 -j ACCEPT
 /sbin/iptables -A FORWARD -o eth1 -j REJECT
 
 /sbin/iptables -A FORWARD -i eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+#permitir o acesso ao wallen garden apenas para a rede interna
 /sbin/iptables -A FORWARD -i eth3 -o eth0 -d 10.20.72.6 -j ACCEPT
 /sbin/iptables -A FORWARD -o eth0 -d 10.20.72.6 -j REJECT
 
 snmpd
+
+
 
