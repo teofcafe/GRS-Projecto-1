@@ -6,6 +6,7 @@ route add default gw 10.20.75.2 dev eth3
 
 /etc/init.d/zebra start
 
+/sbin/iptables -F
 /sbin/iptables -A FORWARD -i eth1 -m state --state RELATED,ESTABLISHED -j ACCEPT
 /sbin/iptables -A FORWARD -i eth2 -o eth1 -j ACCEPT
 /sbin/iptables -A FORWARD -o eth1 -j REJECT
