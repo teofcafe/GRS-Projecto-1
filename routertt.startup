@@ -10,6 +10,9 @@ route add default gw 10.20.75.2 dev eth3
 /sbin/iptables -A FORWARD -i eth2 -o eth1 -j ACCEPT
 /sbin/iptables -A FORWARD -o eth1 -j REJECT
 
+/sbin/iptables -A FORWARD -i eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+/sbin/iptables -A FORWARD -i eth3 -o eth0 -d 10.20.72.6 -j ACCEPT
+/sbin/iptables -A FORWARD -o eth0 -d 10.20.72.6 -j REJECT
 
 snmpd
 
