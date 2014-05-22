@@ -8,9 +8,5 @@ brctl addif br0 eth1
 
 ifconfig br0 up
 
-#cd /etc/rc3.d
-#ln -s /etc/rc.d/init.d/snortd S40snortd
-#brctl stp br0 on 
-
-snort -c /etc/snort/snort.conf -l /var/log/snort/ -i br0
+snort -c /etc/snort/snort.conf -l /var/log/snort/ -i br0 &
 
