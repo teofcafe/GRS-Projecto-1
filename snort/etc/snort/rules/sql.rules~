@@ -1,4 +1,0 @@
-alert tcp any any -> any any (msg:"[ALERT] SQL INJECTION  '";flow:to_server,established; pcre:"/(\')/i"; classtype:Web-application-attack;sid:5000547;)
-alert tcp any any -> any any (msg:"[ALERT] SQL INJECTION --"; content:"%20--%20"; sid:5000548;)
-
-#alert tcp any any -> any any (msg:"[ALERT] SQL INJECTION  '";flow:to_server,established; pcre:"/(\-\-)/i"; classtype:Web-application attack;sid:5000549;)
