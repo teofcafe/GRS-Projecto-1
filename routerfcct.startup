@@ -5,4 +5,6 @@ ifconfig eth3 10.20.73.2 netmask 255.255.255.0 up
 
 /etc/init.d/zebra start
 
+snmpd
+
 

@@ -8,7 +8,24 @@ route add default gw 10.20.75.2 dev eth3
 
 iptables -F
 
+iptables -A FORWARD -i eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
 iptables -A FORWARD -i eth1 -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -i eth2 -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+#o vod pode ser acedido por ssh ou udp ou icmp pela rede interna
+iptables -A FORWARD -i eth3 -o eth0 -d 10.20.72.3 -p tcp --dport 22 -j ACCEPT
+iptables -A FORWARD -i eth3 -o eth0 -d 10.20.72.3 -p udp -j ACCEPT
+iptables -A FORWARD -i eth3 -o eth0 -d 10.20.72.3 -p icmp -j ACCEPT
+
+#o gestor so pode fazer pedidos snmp e receber respostas snmp
+iptables -A FORWARD -o eth0 -d 10.20.72.5 -p udp --dport 162 -j ACCEPT
+iptables -A FORWARD -i eth0 -s 10.20.72.5 -p udp --dport 161 -j ACCEPT
+
+#acesso ao wallen garden permitido apenas para a rede interna
+iptables -A FORWARD -i eth3 -o eth0 -d 10.20.72.6 -p tcp --dport 80 -j ACCEPT
+
+#todo o trafego que vem de fora tem de passar pela DMZ
+iptables -A FORWARD -i eth1 -o eth2 -d 10.20.74.0/24 -j ACCEPT
 
 #Servidor DNS [primario]
 # > 512 bytes
@@ -30,15 +47,7 @@ iptables -A FORWARD -o eth2 -d 10.20.74.2 -p tcp --dport 143 -j ACCEPT
 #exim
 iptables -A FORWARD -o eth2 -d 10.20.74.2 -p tcp --dport 25 -j ACCEPT
 
-#permitir acesso de fora apenas para a DMZ
-/sbin/iptables -A FORWARD -i eth2 -o eth1 -j ACCEPT
-/sbin/iptables -A FORWARD -o eth1 -j REJECT
-
-/sbin/iptables -A FORWARD -i eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
-
-#permitir o acesso ao wallen garden apenas para a rede interna
-/sbin/iptables -A FORWARD -i eth3 -o eth0 -d 10.20.72.6 -j ACCEPT
-/sbin/iptables -A FORWARD -o eth0 -d 10.20.72.6 -j REJECT
+iptables -A FORWARD -j REJECT
 
 snmpd
 
