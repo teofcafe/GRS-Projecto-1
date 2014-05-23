@@ -1,0 +1,3 @@
+alert tcp $EXTERNAL_NET any -> $HTTP_SERVERS $HTTP_PORTS (msg:"[ALERT] SQL INJECTION  '"; flow:to_server,established; uricontent:"'"; nocase; classtype:web-application-attack; sid:5000547; rev:6;)
+
+alert tcp $EXTERNAL_NET any -> $HTTP_SERVERS $HTTP_PORTS (msg:"[ALERT] SQL INJECTION -- "; flow:to_server,established; uricontent:" -- "; nocase; classtype:web-application-attack; sid:5000548; rev:6;)
