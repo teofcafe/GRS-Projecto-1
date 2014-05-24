@@ -35,9 +35,6 @@ iptables -A FORWARD -i eth1 -o eth0 -s 192.168.0.5 -d 10.20.72.0/24 -j ACCEPT
 #as restantes maquinas podem comunicar para o exterior
 iptables -A FORWARD -i eth1 -o eth0 -s ! 192.168.0.5 -j ACCEPT
 
-#MRTG
-#iptables -A FORWARD -i eth0 -s 10.20.72.5 -p udp --dport 161 -j ACCEPT
-
 #regras default
 iptables -A FORWARD -j REJECT
 
