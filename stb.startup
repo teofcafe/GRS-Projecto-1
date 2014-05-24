@@ -3,3 +3,5 @@ ifconfig eth0 hw ether 00:80:48:BA:d1:20
 /etc/init.d/networking force-reload
 
 route add default gw 192.168.0.1 dev eth0
+
+/etc/init.d/ssh start
