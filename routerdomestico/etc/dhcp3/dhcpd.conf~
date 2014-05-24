@@ -14,8 +14,8 @@ subnet 192.168.0.0 netmask 255.255.255.0 {
 }
 
 host stb {
-	hardware ethernet 00:80:48:BA:d1:20;
-	fixed-address 192.168.0.5;
+hardware ethernet 00:80:48:BA:d1:20;
+fixed-address 192.168.0.5;
 }
 
 

@@ -1,4 +1,4 @@
 switchdomestico : routerdomestico
 pc1 pc2 pc3 stb : switchdomestico
-middleware_gestor : routertt routerfcct routerdomestico servidoremail
-snort : coreswitch dnsroot dnsteo dnsteoreplica dnsto drm_ca middleware_gestor pc1 pc2 pc3 pcteste receptormultimedia routerdomestico routerfcct routertt serviceswitch servidoremail stb switchdomestico vod wallengardencontent
+middleware_gestor : routertt routerdomestico servidoremail snort
+snort : coreswitch dnsroot dnsteo dnsteoreplica dnsto drm_ca pc1 pc2 pc3 pcteste receptormultimedia routerdomestico routerfcct routertt serviceswitch servidoremail stb switchdomestico vod wallengardencontent

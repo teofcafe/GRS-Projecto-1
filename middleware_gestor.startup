@@ -3,7 +3,7 @@ route add default gw 10.20.72.1 dev eth0
 
 mkdir /var/www/mrtg
 
-cfgmaker --ifref=name --global 'WorkDir:/var/www' --output /root/mrtg.cfg private@10.20.72.1 private@10.20.75.2 private@10.20.73.2 private@10.20.74.2
+cfgmaker --ifref=name --global 'WorkDir:/var/www' --output /root/mrtg.cfg private@10.20.72.1 private@10.20.75.2 private@10.20.74.2
 
 env LANG=C /usr/bin/mrtg /root/mrtg.cfg --daemon
 env LANG=C /usr/bin/mrtg /root/emailserver.cfg --daemon
