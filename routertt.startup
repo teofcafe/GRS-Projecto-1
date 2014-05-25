@@ -29,8 +29,10 @@ iptables -A FORWARD -i eth3 -o eth0 -d 10.20.72.6 -p tcp --dport 80 -j ACCEPT
 #todo o trafego que vem de fora tem de passar pela DMZ
 iptables -A FORWARD -i eth1 -o eth2 -d 10.20.74.0/24 -j ACCEPT
 
-#a rede interna pode aceder por ssh a rede externa
+#a rede interna pode aceder por ssh, http e https a rede externa
 iptables -A FORWARD -i eth3 -o eth1 -p tcp --dport 22 -j ACCEPT
+iptables -A FORWARD -i eth3 -o eth1 -p tcp --dport 80 -j ACCEPT
+iptables -A FORWARD -i eth3 -o eth1 -p tcp --dport 443 -j ACCEPT
 
 #Servidor DNS [primario]
 # > 512 bytes
