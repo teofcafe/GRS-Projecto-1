@@ -26,9 +26,6 @@ iptables -A FORWARD -i eth0 -s 10.20.72.5 -p udp --dport 161 -j ACCEPT
 #acesso ao wallen garden permitido apenas para a rede interna
 iptables -A FORWARD -i eth3 -o eth0 -d 10.20.72.6 -p tcp --dport 80 -j ACCEPT
 
-#todo o trafego que vem de fora tem de passar pela DMZ
-iptables -A FORWARD -i eth1 -o eth2 -d 10.20.74.0/24 -j ACCEPT
-
 #a rede interna pode aceder por ssh, http e https a rede externa
 iptables -A FORWARD -i eth3 -o eth1 -p tcp --dport 22 -j ACCEPT
 iptables -A FORWARD -i eth3 -o eth1 -p tcp --dport 80 -j ACCEPT

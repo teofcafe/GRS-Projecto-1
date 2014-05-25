@@ -14,5 +14,7 @@ useradd --create-home membro2
 echo -e "membro2\nmembro2" | passwd membro2
 useradd --create-home membro3
 echo -e "membro3\nmembro3" | passwd membro3
+useradd --create-home pcteste
+echo -e "pcteste\npcteste" | passwd pcteste
 
 snmpd
